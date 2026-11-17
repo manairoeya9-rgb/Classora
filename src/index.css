@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@import "tailwindcss";
+
+/* ── Design Tokens ──────────────────────────────────── */
+:root {
+  --color-ivory:        #F8F6F0;
+  --color-ivory-dark:   #EDE9DF;
+  --color-forest:       #244B3C;
+  --color-forest-light: #2D5E4A;
+  --color-forest-dark:  #1A3629;
+  --color-sage:         #B8CDB8;
+  --color-sage-light:   #D5E3D5;
+  --color-coral:        #F2A58F;
+  --color-coral-light:  #FAD4C8;
+  --color-lavender:     #D8D0F0;
+  --color-lavender-dark:#B4A8E0;
+  --color-yellow:       #F3D78A;
+  --color-yellow-light: #FAF0C4;
+  --color-text:         #1C2A24;
+  --color-text-muted:   #5A7066;
+  --color-border:       #DDD8CE;
+  --shadow-sm:  0 1px 3px 0 rgba(36,75,60,.08), 0 1px 2px -1px rgba(36,75,60,.06);
+  --shadow-md:  0 4px 12px -2px rgba(36,75,60,.10), 0 2px 6px -2px rgba(36,75,60,.06);
+  --shadow-lg:  0 16px 40px -4px rgba(36,75,60,.12), 0 6px 16px -4px rgba(36,75,60,.08);
+  --radius-sm:  0.5rem;
+  --radius-md:  0.75rem;
+  --radius-lg:  1rem;
+  --radius-xl:  1.5rem;
+  --radius-2xl: 2rem;
+}
+
+@theme {
+  --color-ivory:        #F8F6F0;
+  --color-ivory-dark:   #EDE9DF;
+  --color-forest:       #244B3C;
+  --color-forest-light: #2D5E4A;
+  --color-forest-dark:  #1A3629;
+  --color-sage:         #B8CDB8;
+  --color-sage-light:   #D5E3D5;
+  --color-coral:        #F2A58F;
+  --color-coral-light:  #FAD4C8;
+  --color-lavender:     #D8D0F0;
+  --color-lavender-dark:#B4A8E0;
+  --color-yellow:       #F3D78A;
+  --color-yellow-light: #FAF0C4;
+  --color-text:         #1C2A24;
+  --color-text-muted:   #5A7066;
+  --color-border:       #DDD8CE;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, serif;
+}
+
+/* ── Base ───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-text);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-ivory-dark); border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: var(--color-sage); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-forest); }
+
+/* ── Utility Classes ────────────────────────────────── */
+.font-serif { font-family: 'Lora', Georgia, serif; }
+
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card-hover:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ── Page Transitions ───────────────────────────────── */
+.page-enter {
+  animation: fadeSlideIn 0.3s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.animate-fade-in    { animation: fadeIn 0.3s ease forwards; }
+.animate-scale-in   { animation: scaleIn 0.25s ease forwards; }
+.animate-slide-right{ animation: slideInRight 0.3s ease forwards; }
+.animate-slide-left { animation: slideInLeft  0.3s ease forwards; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+/* ── Focus Ring ─────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Tables ─────────────────────────────────────────── */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th {
+  background: var(--color-ivory-dark);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+.data-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tbody tr {
+  transition: background 0.15s ease;
+}
+.data-table tbody tr:hover { background: var(--color-ivory); }
+
+/* ── Sidebar ─────────────────────────────────────────── */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-sage);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.sidebar-link:hover {
+  background: rgba(184,205,184,0.15);
+  color: white;
+}
+.sidebar-link.active {
+  background: rgba(184,205,184,0.2);
+  color: white;
+}
+.sidebar-link.active svg { color: var(--color-yellow); }
+
+/* ── Status Badge Colors ─────────────────────────────── */
+.badge-green   { background: #D1FADF; color: #166534; }
+.badge-red     { background: #FEE2E2; color: #991B1B; }
+.badge-yellow  { background: #FEF9C3; color: #854D0E; }
+.badge-blue    { background: #DBEAFE; color: #1E40AF; }
+.badge-purple  { background: var(--color-lavender); color: #4C1D95; }
+.badge-coral   { background: var(--color-coral-light); color: #9A3412; }
+.badge-sage    { background: var(--color-sage-light); color: var(--color-forest); }
+.badge-gray    { background: #F3F4F6; color: #374151; }
+
+/* ── Print ────────────────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .card { box-shadow: none; border: 1px solid #ccc; }
+}
