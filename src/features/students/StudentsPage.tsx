@@ -274,8 +274,8 @@ export default function StudentsPage() {
         <p className="sm:col-span-2 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-muted)]">
           Informations de l’élève
         </p>
-        <Input label="Prénom" value={form.first_name} onChange={e => setForm(f => ({ ...f, first_name: e.target.value }))} required placeholder="Yasmine" />
-        <Input label="Nom de famille" value={form.last_name} onChange={e => setForm(f => ({ ...f, last_name: e.target.value }))} required placeholder="Ben Ali" />
+        <Input label="Prénom" value={form.first_name} onChange={e => setForm(f => ({ ...f, first_name: e.target.value }))} required placeholder="Prénom" />
+        <Input label="Nom de famille" value={form.last_name} onChange={e => setForm(f => ({ ...f, last_name: e.target.value }))} required placeholder="Nom" />
         <Input label="Date de naissance" type="date" value={form.birth_date} onChange={e => setForm(f => ({ ...f, birth_date: e.target.value }))} required />
         <Select label="Sexe" value={form.gender} onChange={e => setForm(f => ({ ...f, gender: e.target.value as Gender }))} options={GENDER_OPTIONS} />
         <Select label="Classe" value={form.classe_id} onChange={e => setForm(f => ({ ...f, classe_id: e.target.value }))} options={classOptions} placeholder="Choisir une classe" />
@@ -288,7 +288,7 @@ export default function StudentsPage() {
         </p>
         <div className="flex items-end gap-2">
           <div className="flex-1">
-            <Input label="Téléphone du parent" type="tel" value={form.parent_phone} onChange={e => setForm(f => ({ ...f, parent_phone: e.target.value }))} placeholder="+216 96 456 789" />
+            <Input label="Téléphone du parent" type="tel" value={form.parent_phone} onChange={e => setForm(f => ({ ...f, parent_phone: e.target.value }))} placeholder="+216 00 000 000" />
           </div>
           <Button variant="secondary" icon={<Search size={14} />} onClick={searchParent} loading={searching}>
             Rechercher

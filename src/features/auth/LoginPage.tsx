@@ -165,7 +165,7 @@ export default function LoginPage() {
               id="login-email"
               label="Adresse e-mail"
               type="email"
-              placeholder="prenom.nom@classora.fr"
+              placeholder="prenom.nom@exemple.com"
               value={email}
               onChange={e => setEmail(e.target.value)}
               icon={<Mail size={14} />}

@@ -5,6 +5,10 @@ import type {
   Message, Announcement, AcademicYear
 } from '@/types'
 
+// ⚠️ DONNÉES DE TEST UNIQUEMENT — toutes les personnes, adresses e-mail et
+// numéros de téléphone ci-dessous sont fictifs (domaine réservé example.com,
+// numéros 00 000 000 non attribués).
+
 // ─── Année scolaire ──────────────────────────────────────────────────────────
 
 export const DEMO_ACADEMIC_YEAR: AcademicYear = {
@@ -18,14 +22,14 @@ export const DEMO_ACADEMIC_YEAR: AcademicYear = {
 // ─── Profils ─────────────────────────────────────────────────────────────────
 
 export const DEMO_PROFILES: Profile[] = [
-  { id: 'user-admin', email: 'direction@classora.tn', full_name: 'Mme Amira Ben Salem', role: 'admin', phone: '+216 98 123 456', created_at: '2026-09-01' },
-  { id: 'user-teacher-1', email: 'ahmed.trabelsi@classora.tn', full_name: 'M. Ahmed Trabelsi', role: 'enseignant', phone: '+216 55 123 456', created_at: '2026-09-01' },
-  { id: 'user-teacher-2', email: 'sarra.mansouri@classora.tn', full_name: 'Mme Sarra Mansouri', role: 'enseignant', phone: '+216 22 234 567', created_at: '2026-09-01' },
-  { id: 'user-teacher-3', email: 'mohamed.gharbi@classora.tn', full_name: 'M. Mohamed Gharbi', role: 'enseignant', phone: '+216 25 345 678', created_at: '2026-09-01' },
-  { id: 'user-parent-1', email: 'noura.benali@gmail.com', full_name: 'Mme Noura Ben Ali', role: 'parent', phone: '+216 96 456 789', created_at: '2026-09-01' },
-  { id: 'user-parent-2', email: 'karim.jaziri@gmail.com', full_name: 'M. Karim Jaziri', role: 'parent', phone: '+216 97 567 890', created_at: '2026-09-01' },
-  { id: 'user-eleve-1', email: 'yasmine.benali@classora.tn', full_name: 'Yasmine Ben Ali', role: 'eleve', created_at: '2026-09-01' },
-  { id: 'user-secretariat', email: 'secretariat@classora.tn', full_name: 'Mme Ines Khelifi', role: 'secretariat', phone: '+216 71 234 567', created_at: '2026-09-01' },
+  { id: 'user-admin', email: 'direction.test@example.com', full_name: 'Compte Test Direction', role: 'admin', phone: '+216 00 000 001', created_at: '2026-09-01' },
+  { id: 'user-teacher-1', email: 'enseignant1.test@example.com', full_name: 'Enseignant Test 1', role: 'enseignant', phone: '+216 00 000 002', created_at: '2026-09-01' },
+  { id: 'user-teacher-2', email: 'enseignant2.test@example.com', full_name: 'Enseignante Test 2', role: 'enseignant', phone: '+216 00 000 003', created_at: '2026-09-01' },
+  { id: 'user-teacher-3', email: 'enseignant3.test@example.com', full_name: 'Enseignant Test 3', role: 'enseignant', phone: '+216 00 000 004', created_at: '2026-09-01' },
+  { id: 'user-parent-1', email: 'parent1.test@example.com', full_name: 'Parent Test 1', role: 'parent', phone: '+216 00 000 005', created_at: '2026-09-01' },
+  { id: 'user-parent-2', email: 'parent2.test@example.com', full_name: 'Parent Test 2', role: 'parent', phone: '+216 00 000 006', created_at: '2026-09-01' },
+  { id: 'user-eleve-1', email: 'eleve1.test@example.com', full_name: 'Élève Test 1', role: 'eleve', created_at: '2026-09-01' },
+  { id: 'user-secretariat', email: 'secretariat.test@example.com', full_name: 'Compte Test Secrétariat', role: 'secretariat', phone: '+216 00 000 007', created_at: '2026-09-01' },
 ]
 
 // ─── Salles ──────────────────────────────────────────────────────────────────
@@ -59,11 +63,11 @@ export const DEMO_SUBJECTS: Subject[] = [
 // ─── Enseignants ─────────────────────────────────────────────────────────────
 
 export const DEMO_TEACHERS: Teacher[] = [
-  { id: 'teacher-1', profile_id: 'user-teacher-1', employee_number: 'ENS-001', full_name: 'M. Ahmed Trabelsi', email: 'ahmed.trabelsi@classora.tn', phone: '+216 55 123 456', specialty: 'Mathématiques', hire_date: '2018-09-01' },
-  { id: 'teacher-2', profile_id: 'user-teacher-2', employee_number: 'ENS-002', full_name: 'Mme Sarra Mansouri', email: 'sarra.mansouri@classora.tn', phone: '+216 22 234 567', specialty: 'Langue arabe', hire_date: '2020-09-01' },
-  { id: 'teacher-3', profile_id: 'user-teacher-3', employee_number: 'ENS-003', full_name: 'M. Mohamed Gharbi', email: 'mohamed.gharbi@classora.tn', phone: '+216 25 345 678', specialty: 'Éveil scientifique', hire_date: '2019-09-01' },
-  { id: 'teacher-4', profile_id: 'user-admin', employee_number: 'ENS-004', full_name: 'Mme Amira Ben Salem', email: 'direction@classora.tn', phone: '+216 98 123 456', specialty: 'Français', hire_date: '2021-09-01' },
-  { id: 'teacher-5', profile_id: 'user-admin', employee_number: 'ENS-005', full_name: 'M. Lucas Garnier', email: 'direction@classora.tn', phone: '+216 98 123 456', specialty: 'Anglais', hire_date: '2022-09-01' },
+  { id: 'teacher-1', profile_id: 'user-teacher-1', employee_number: 'ENS-001', full_name: 'Enseignant Test 1', email: 'enseignant1.test@example.com', phone: '+216 00 000 002', specialty: 'Mathématiques', hire_date: '2018-09-01' },
+  { id: 'teacher-2', profile_id: 'user-teacher-2', employee_number: 'ENS-002', full_name: 'Enseignante Test 2', email: 'enseignant2.test@example.com', phone: '+216 00 000 003', specialty: 'Langue arabe', hire_date: '2020-09-01' },
+  { id: 'teacher-3', profile_id: 'user-teacher-3', employee_number: 'ENS-003', full_name: 'Enseignant Test 3', email: 'enseignant3.test@example.com', phone: '+216 00 000 004', specialty: 'Éveil scientifique', hire_date: '2019-09-01' },
+  { id: 'teacher-4', profile_id: 'user-admin', employee_number: 'ENS-004', full_name: 'Enseignante Test 4', email: 'direction.test@example.com', phone: '+216 00 000 001', specialty: 'Français', hire_date: '2021-09-01' },
+  { id: 'teacher-5', profile_id: 'user-admin', employee_number: 'ENS-005', full_name: 'Enseignant Test 5', email: 'direction.test@example.com', phone: '+216 00 000 001', specialty: 'Anglais', hire_date: '2022-09-01' },
 ]
 
 // ─── Classes : 1ère à 6ème année ─────────────────────────────────────────────
@@ -77,17 +81,17 @@ export const DEMO_CLASSES: Classe[] = [
   { id: 'class-6eme', name: '6ème année A', level: '6ème année', teacher_id: 'teacher-2', academic_year_id: 'ay-2026-2027', room_id: 'room-6', capacity: 30, teacher: DEMO_TEACHERS[1], room: DEMO_ROOMS[5], student_count: 22 },
 ]
 
-// ─── Élèves ──────────────────────────────────────────────────────────────────
+// ─── Élèves (fictifs) ────────────────────────────────────────────────────────
 
 export const DEMO_STUDENTS: Student[] = [
-  { id: 'stu-1', student_number: 'EL-2026-001', first_name: 'Yasmine', last_name: 'Ben Ali', full_name: 'Yasmine Ben Ali', birth_date: '2020-03-14', gender: 'F', classe_id: 'class-cp', classe: DEMO_CLASSES[0], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
-  { id: 'stu-2', student_number: 'EL-2026-002', first_name: 'Adam', last_name: 'Jaziri', full_name: 'Adam Jaziri', birth_date: '2019-07-22', gender: 'M', classe_id: 'class-ce1', classe: DEMO_CLASSES[1], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
-  { id: 'stu-3', student_number: 'EL-2026-003', first_name: 'Mariem', last_name: 'Trabelsi', full_name: 'Mariem Trabelsi', birth_date: '2018-11-08', gender: 'F', classe_id: 'class-ce2', classe: DEMO_CLASSES[2], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
-  { id: 'stu-4', student_number: 'EL-2026-004', first_name: 'Youssef', last_name: 'Gharbi', full_name: 'Youssef Gharbi', birth_date: '2017-05-30', gender: 'M', classe_id: 'class-cm1', classe: DEMO_CLASSES[3], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
-  { id: 'stu-5', student_number: 'EL-2026-005', first_name: 'Nour', last_name: 'Mansouri', full_name: 'Nour Mansouri', birth_date: '2016-09-18', gender: 'F', classe_id: 'class-cm2', classe: DEMO_CLASSES[4], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
-  { id: 'stu-6', student_number: 'EL-2026-006', first_name: 'Omar', last_name: 'Ben Salem', full_name: 'Omar Ben Salem', birth_date: '2020-01-25', gender: 'M', classe_id: 'class-cp', classe: DEMO_CLASSES[0], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
-  { id: 'stu-7', student_number: 'EL-2026-007', first_name: 'Ines', last_name: 'Khelifi', full_name: 'Ines Khelifi', birth_date: '2019-04-12', gender: 'F', classe_id: 'class-ce1', classe: DEMO_CLASSES[1], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
-  { id: 'stu-8', student_number: 'EL-2026-008', first_name: 'Rayen', last_name: 'Jebali', full_name: 'Rayen Jebali', birth_date: '2016-08-03', gender: 'M', classe_id: 'class-6eme', classe: DEMO_CLASSES[5], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-1', student_number: 'EL-2026-001', first_name: 'Élève', last_name: 'Test 1', full_name: 'Élève Test 1', birth_date: '2020-03-14', gender: 'F', classe_id: 'class-cp', classe: DEMO_CLASSES[0], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-2', student_number: 'EL-2026-002', first_name: 'Élève', last_name: 'Test 2', full_name: 'Élève Test 2', birth_date: '2019-07-22', gender: 'M', classe_id: 'class-ce1', classe: DEMO_CLASSES[1], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-3', student_number: 'EL-2026-003', first_name: 'Élève', last_name: 'Test 3', full_name: 'Élève Test 3', birth_date: '2018-11-08', gender: 'F', classe_id: 'class-ce2', classe: DEMO_CLASSES[2], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-4', student_number: 'EL-2026-004', first_name: 'Élève', last_name: 'Test 4', full_name: 'Élève Test 4', birth_date: '2017-05-30', gender: 'M', classe_id: 'class-cm1', classe: DEMO_CLASSES[3], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-5', student_number: 'EL-2026-005', first_name: 'Élève', last_name: 'Test 5', full_name: 'Élève Test 5', birth_date: '2016-09-18', gender: 'F', classe_id: 'class-cm2', classe: DEMO_CLASSES[4], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-6', student_number: 'EL-2026-006', first_name: 'Élève', last_name: 'Test 6', full_name: 'Élève Test 6', birth_date: '2020-01-25', gender: 'M', classe_id: 'class-cp', classe: DEMO_CLASSES[0], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-7', student_number: 'EL-2026-007', first_name: 'Élève', last_name: 'Test 7', full_name: 'Élève Test 7', birth_date: '2019-04-12', gender: 'F', classe_id: 'class-ce1', classe: DEMO_CLASSES[1], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
+  { id: 'stu-8', student_number: 'EL-2026-008', first_name: 'Élève', last_name: 'Test 8', full_name: 'Élève Test 8', birth_date: '2016-08-03', gender: 'M', classe_id: 'class-6eme', classe: DEMO_CLASSES[5], enrollment_date: '2026-09-15', academic_year_id: 'ay-2026-2027', status: 'actif' },
 ]
 
 // ─── Notes ───────────────────────────────────────────────────────────────────
@@ -142,8 +146,8 @@ export const DEMO_MESSAGES: Message[] = [
     id: 'msg-1',
     sender_id: 'user-parent-1',
     recipient_id: 'user-teacher-2',
-    subject: 'Absence de Yasmine',
-    body: 'Bonjour Mme Mansouri,\n\nJe vous informe que ma fille Yasmine sera absente demain pour un rendez-vous médical.\n\nCordialement,\nMme Ben Ali',
+    subject: 'Absence de Élève Test 1',
+    body: 'Bonjour Enseignante Test 2,\n\nJe vous informe que mon enfant Élève Test 1 sera absent demain pour un rendez-vous médical.\n\nCordialement,\nParent Test 1',
     sent_at: '2026-10-21T08:30:00',
     is_archived: false,
     sender: DEMO_PROFILES[4],
@@ -153,8 +157,8 @@ export const DEMO_MESSAGES: Message[] = [
     id: 'msg-2',
     sender_id: 'user-teacher-1',
     recipient_id: 'user-parent-2',
-    subject: 'Résultats scolaires d’Adam',
-    body: 'Bonjour M. Jaziri,\n\nAdam progresse bien en mathématiques. Il doit continuer ses efforts en lecture.\n\nCordialement,\nM. Trabelsi',
+    subject: 'Résultats scolaires de Élève Test 2',
+    body: 'Bonjour Parent Test 2,\n\nÉlève Test 2 progresse bien en mathématiques. Il doit continuer ses efforts en lecture.\n\nCordialement,\nEnseignant Test 1',
     sent_at: '2026-10-20T14:15:00',
     read_at: '2026-10-20T18:30:00',
     is_archived: false,
@@ -319,7 +323,6 @@ schedules.forEach(schedule => {
   schedule.data.forEach((subjects, dayIndex) => {
     const day = (dayIndex + 1) as TimetableSlot['day_of_week']
 
-    
     const teachers = subjects.map((subjectId) => {
       if (subjectId === 'sub-2') return 'teacher-1'
       if (subjectId === 'sub-3') return 'teacher-3'
@@ -331,7 +334,7 @@ schedules.forEach(schedule => {
     addDay(
       schedule.id,
       schedule.room,
-      day ,
+      day,
       subjects,
       teachers,
       schedule.end,
@@ -345,5 +348,3 @@ export const DEMO_TIMETABLE: TimetableSlot[] = timetableSlots
 // Conservé pour compatibilité avec les autres modules.
 
 export const DEMO_PAYMENTS: Payment[] = []
-
-

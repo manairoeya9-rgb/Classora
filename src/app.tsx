@@ -48,8 +48,11 @@ function AppShell() {
             <Route path="/timetable" element={<TimetablePage />} />
           </Route>
 
-          <Route element={<ProtectedRoute roles={['admin', 'enseignant', 'parent', 'eleve']} />}>
+          <Route element={<ProtectedRoute roles={['admin', 'enseignant', 'secretariat', 'parent', 'eleve']} />}>
             <Route path="/grades" element={<GradesPage />} />
+          </Route>
+
+          <Route element={<ProtectedRoute roles={['admin', 'enseignant', 'parent', 'eleve']} />}>
             <Route path="/homework" element={<HomeworkPage />} />
           </Route>
 

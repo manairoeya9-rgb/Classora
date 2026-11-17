@@ -112,7 +112,7 @@ export default function RegisterPage() {
             id="register-phone"
             label="Numéro de téléphone"
             type="tel"
-            placeholder="+216 96 456 789"
+            placeholder="+216 00 000 000"
             value={phone}
             onChange={e => setPhone(e.target.value)}
             icon={<Phone size={14} />}
