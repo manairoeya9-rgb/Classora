@@ -9,7 +9,7 @@ import { Input, Select } from '@/components/ui/Input'
 import { PageLoading } from '@/components/ui/States'
 import { useToast } from '@/components/ui/Toast'
 import { useAuth } from '@/features/auth/AuthProvider'
-import { listClasses, type ClassRow } from '@/features/students/studentService'
+import { listAccessibleClasses, type ClassRow } from '@/features/classes/adminService'
 import {
   listSubjects,
   listClassStudents,
@@ -75,7 +75,7 @@ export default function GradesPage() {
         const subs = await listSubjects()
         setSubjects(subs)
         if (isStaff) {
-          const cls = await listClasses()
+          const cls = await listAccessibleClasses(user?.id ?? '', role ?? '')
           setClasses(cls)
           if (cls.length > 0) setSelectedClass(cls[0].id)
         }

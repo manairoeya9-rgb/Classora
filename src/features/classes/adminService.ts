@@ -196,6 +196,30 @@ export async function deleteRoom(id: string): Promise<void> {
   if (error) throw error
 }
 
+// Classes visibles par l'utilisateur : la direction voit tout, l'enseignant seulement les siennes
+// (titulaire ou affectation dans l'emploi du temps).
+export async function listAccessibleClasses(profileId: string, role: string): Promise<ClassRow[]> {
+  const all = await listClasses()
+  if (role !== 'enseignant') return all
+
+  const { data: teacher, error: teacherError } = await db
+    .from('teachers')
+    .select('id')
+    .eq('profile_id', profileId)
+    .maybeSingle()
+  if (teacherError) throw teacherError
+  if (!teacher) return []
+
+  const { data: slots, error: slotsError } = await db
+    .from('timetable_slots')
+    .select('classe_id')
+    .eq('teacher_id', teacher.id)
+  if (slotsError) throw slotsError
+
+  const assigned = new Set<string>((slots ?? []).map((s: { classe_id: string }) => s.classe_id))
+  return all.filter(c => c.teacher_id === teacher.id || assigned.has(c.id))
+}
+
 export function describeAdminError(err: unknown): string {
   const e = err as { code?: string; message?: string }
   if (e?.code === '23505') return 'Ce nom existe déjà.'

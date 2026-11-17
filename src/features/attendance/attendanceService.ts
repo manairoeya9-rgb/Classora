@@ -96,6 +96,6 @@ export async function saveJustification(id: string, text: string): Promise<void>
 export function describeAttendanceError(err: unknown): string {
   const e = err as { code?: string; message?: string }
   if (e?.code === '42501') return 'Vous n’êtes pas autorisé à saisir les présences de cette classe.'
-  if (e?.message?.includes('n''appartient pas')) return 'Un élève ne peut être pointé que dans sa propre classe.'
+  if (e?.message?.includes("n'appartient pas")) return "Un élève ne peut être pointé que dans sa propre classe."
   return e?.message ?? 'Erreur inconnue'
 }

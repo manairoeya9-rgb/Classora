@@ -10,7 +10,7 @@ import { useToast } from '@/components/ui/Toast'
 import { useAuth } from '@/features/auth/AuthProvider'
 import supabase from '@/lib/supabase'
 import {
-  listClasses, listSubjects, listTeachers, listRooms,
+  listAccessibleClasses, listSubjects, listTeachers, listRooms,
   describeAdminError,
   type ClassRow, type SubjectRow, type TeacherRow, type RoomRow,
 } from '@/features/classes/adminService'
@@ -50,7 +50,7 @@ export default function TimetablePage() {
   useEffect(() => {
     async function init() {
       try {
-        const [c, s, t, r] = await Promise.all([listClasses(), listSubjects(), listTeachers(), listRooms()])
+        const [c, s, t, r] = await Promise.all([listAccessibleClasses(user?.id ?? '', user?.role ?? ''), listSubjects(), listTeachers(), listRooms()])
         setClasses(c)
         setSubjects(s)
         setTeachers(t)
